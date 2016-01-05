@@ -1,0 +1,96 @@
+
+/* Class = "UITextField"; placeholder = "请输入参观日期"; ObjectID = "1mF-vu-6JS"; */
+"1mF-vu-6JS.placeholder" = "请输入参观日期";
+
+/* Class = "UITextField"; placeholder = "请输入参观开始时间"; ObjectID = "5J0-pZ-lIK"; */
+"5J0-pZ-lIK.placeholder" = "请输入参观开始时间";
+
+/* Class = "UILabel"; text = "结束时间："; ObjectID = "6qv-j7-X69"; */
+"6qv-j7-X69.text" = "结束时间：";
+
+/* Class = "UILabel"; text = "参观日期："; ObjectID = "8km-Yw-li7"; */
+"8km-Yw-li7.text" = "参观日期：";
+
+/* Class = "UITextField"; placeholder = "请输入参观日期"; ObjectID = "Ayg-C4-Y4O"; */
+"Ayg-C4-Y4O.placeholder" = "请输入参观日期";
+
+/* Class = "UILabel"; text = "参观日期："; ObjectID = "B6U-Yk-ug9"; */
+"B6U-Yk-ug9.text" = "参观日期：";
+
+/* Class = "UILabel"; text = "密    码："; ObjectID = "DjV-wc-nPc"; */
+"DjV-wc-nPc.text" = "密    码：";
+
+/* Class = "UIButton"; normalTitle = "批量任务"; ObjectID = "Ey1-5k-oM9"; */
+"Ey1-5k-oM9.normalTitle" = "批量任务";
+
+/* Class = "UIButton"; normalTitle = "定时开启"; ObjectID = "FD2-iH-zKB"; */
+"FD2-iH-zKB.normalTitle" = "定时开启";
+
+/* Class = "UIButton"; normalTitle = "加入"; ObjectID = "HEM-sn-HMD"; */
+"HEM-sn-HMD.normalTitle" = "加入";
+
+/* Class = "UITextField"; placeholder = "请输入参观结束时间"; ObjectID = "ImS-3g-sMo"; */
+"ImS-3g-sMo.placeholder" = "请输入参观结束时间";
+
+/* Class = "UITextField"; placeholder = "请输入第一张票的人数"; ObjectID = "LIv-wC-fgC"; */
+"LIv-wC-fgC.placeholder" = "请输入第一张票的人数";
+
+/* Class = "UIButton"; normalTitle = "保存参数"; ObjectID = "Lkt-rn-TzZ"; */
+"Lkt-rn-TzZ.normalTitle" = "保存参数";
+
+/* Class = "UIButton"; normalTitle = "清空"; ObjectID = "Q5h-ux-DGT"; */
+"Q5h-ux-DGT.normalTitle" = "清空";
+
+/* Class = "UITextField"; placeholder = "请输入密码"; ObjectID = "TIw-a1-89m"; */
+"TIw-a1-89m.placeholder" = "请输入密码";
+
+/* Class = "UILabel"; text = "第一张票："; ObjectID = "UpE-n4-4la"; */
+"UpE-n4-4la.text" = "第一张票：";
+
+/* Class = "UILabel"; text = "预约人数："; ObjectID = "VQE-1I-ENV"; */
+"VQE-1I-ENV.text" = "预约人数：";
+
+/* Class = "UILabel"; text = "第二张票："; ObjectID = "XEd-4S-wRd"; */
+"XEd-4S-wRd.text" = "第二张票：";
+
+/* Class = "UITextField"; placeholder = "请输入预约人数"; ObjectID = "YZ3-zq-hiu"; */
+"YZ3-zq-hiu.placeholder" = "请输入预约人数";
+
+/* Class = "UITextField"; placeholder = "请输入参观开始时间"; ObjectID = "boL-cW-2cT"; */
+"boL-cW-2cT.placeholder" = "请输入参观开始时间";
+
+/* Class = "UITextField"; placeholder = "请输入参观结束时间"; ObjectID = "eJr-4k-i0j"; */
+"eJr-4k-i0j.placeholder" = "请输入参观结束时间";
+
+/* Class = "UILabel"; text = "结束时间："; ObjectID = "htp-aZ-v7k"; */
+"htp-aZ-v7k.text" = "结束时间：";
+
+/* Class = "UITextField"; placeholder = "请输入账号"; ObjectID = "hvU-4r-8XG"; */
+"hvU-4r-8XG.placeholder" = "请输入账号";
+
+/* Class = "UIBarButtonItem"; title = "关闭"; ObjectID = "ixa-la-1b4"; */
+"ixa-la-1b4.title" = "关闭";
+
+/* Class = "UITextField"; placeholder = "请输入第二张票的人数"; ObjectID = "mDE-qj-WPj"; */
+"mDE-qj-WPj.placeholder" = "请输入第二张票的人数";
+
+/* Class = "UITextField"; placeholder = "定时开启时间"; ObjectID = "nWL-Q8-Ye3"; */
+"nWL-Q8-Ye3.placeholder" = "定时开启时间";
+
+/* Class = "UITextField"; text = "20:00"; ObjectID = "nWL-Q8-Ye3"; */
+"nWL-Q8-Ye3.text" = "20:00";
+
+/* Class = "UILabel"; text = "账    号："; ObjectID = "ntC-9C-mTJ"; */
+"ntC-9C-mTJ.text" = "账    号：";
+
+/* Class = "UILabel"; text = "开始时间："; ObjectID = "pyc-ia-b3C"; */
+"pyc-ia-b3C.text" = "开始时间：";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "saP-e2-Kbb"; */
+"saP-e2-Kbb.text" = "00:00:00";
+
+/* Class = "UIButton"; normalTitle = "开始预约"; ObjectID = "yiX-XA-yr4"; */
+"yiX-XA-yr4.normalTitle" = "开始预约";
+
+/* Class = "UILabel"; text = "开始时间："; ObjectID = "zH2-Vh-yLe"; */
+"zH2-Vh-yLe.text" = "开始时间：";
