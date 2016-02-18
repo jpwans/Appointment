@@ -26,4 +26,7 @@
 
 四、部分截图
 ------- 
-![](https://github.com/MoPellet/Appointment/raw/master/screenshots/1.jpg) 
+* 可预约状态截图
+* 预约成功列表截图 ![](https://github.com/MoPellet/Appointment/raw/master/screenshots/1.jpg) 
+* 预约失败截图
+
