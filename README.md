@@ -34,7 +34,7 @@
 
 四、部分截图
 ------- 
-* 扫描二维码下载 密码:xinhuoyouxi ![](https://github.com/MoPellet/Appointment/raw/master/screenshots/5.png)
+* [下载地址](https://www.pgyer.com/udQf) 密码:xinhuoyouxi
 * 可预约状态截图 ![](https://github.com/MoPellet/Appointment/raw/master/screenshots/2.jpg) 
 * 预约成功列表截图 ![](https://github.com/MoPellet/Appointment/raw/master/screenshots/1.jpg) 
 * 预约失败截图 ![](https://github.com/MoPellet/Appointment/raw/master/screenshots/3.jpg) 
