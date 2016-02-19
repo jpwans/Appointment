@@ -94,6 +94,7 @@
     
     // 获取预约参数
     NSDictionary * parameter = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
+    NSLog(@"%@",parameter);
     if (parameter) {
         if ([[parameter objectForKey:VisitDate] isEqualToString:[NSDate GetTomorrowDay]]) {
             self.visitDateField.text      = [parameter objectForKey:VisitDate];

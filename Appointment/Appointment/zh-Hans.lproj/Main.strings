@@ -6,7 +6,7 @@
 "5J0-pZ-lIK.placeholder" = "请输入参观开始时间";
 
 /* Class = "UILabel"; text = "结束时间："; ObjectID = "6qv-j7-X69"; */
-"6qv-j7-X69.text" = "结束时间：";
+"6qv-j7-X69.text" = "结束取票：";
 
 /* Class = "UILabel"; text = "参观日期："; ObjectID = "8km-Yw-li7"; */
 "8km-Yw-li7.text" = "参观日期：";
@@ -63,7 +63,7 @@
 "eJr-4k-i0j.placeholder" = "请输入参观结束时间";
 
 /* Class = "UILabel"; text = "结束时间："; ObjectID = "htp-aZ-v7k"; */
-"htp-aZ-v7k.text" = "结束时间：";
+"htp-aZ-v7k.text" = "结束取票：";
 
 /* Class = "UITextField"; placeholder = "请输入账号"; ObjectID = "hvU-4r-8XG"; */
 "hvU-4r-8XG.placeholder" = "请输入账号";
@@ -84,7 +84,7 @@
 "ntC-9C-mTJ.text" = "账    号：";
 
 /* Class = "UILabel"; text = "开始时间："; ObjectID = "pyc-ia-b3C"; */
-"pyc-ia-b3C.text" = "开始时间：";
+"pyc-ia-b3C.text" = "开始取票：";
 
 /* Class = "UILabel"; text = "00:00:00"; ObjectID = "saP-e2-Kbb"; */
 "saP-e2-Kbb.text" = "00:00:00";
@@ -93,4 +93,4 @@
 "yiX-XA-yr4.normalTitle" = "开始预约";
 
 /* Class = "UILabel"; text = "开始时间："; ObjectID = "zH2-Vh-yLe"; */
-"zH2-Vh-yLe.text" = "开始时间：";
+"zH2-Vh-yLe.text" = "开始取票：";

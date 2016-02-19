@@ -183,7 +183,6 @@ static int n = 0;
                     i ++;
                     [self executeAllTasks];
                 }];
-                
             }];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

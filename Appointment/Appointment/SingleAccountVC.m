@@ -30,6 +30,7 @@
     self.emailField.text         = [self.dictionary objectForKey:@"email"];
     self.password.text           = [self.dictionary objectForKey:@"password"];
     NSDictionary * parameter     = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
+    NSLog(@"%@",parameter);
     if (parameter) {
         self.visitDateField.text     = [parameter objectForKey:VisitDate];
         self.visitTimeStart.text     = [parameter objectForKey:VisitTimeStart];

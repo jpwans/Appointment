@@ -18,7 +18,6 @@
 		CC496CE41C28E21300885081 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC496CE31C28E21300885081 /* Images.xcassets */; };
 		CC496CE71C28E21300885081 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC496CE51C28E21300885081 /* LaunchScreen.xib */; };
 		CC496CF31C28E21300885081 /* AppointmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC496CF21C28E21300885081 /* AppointmentTests.m */; };
-		CC67B73D1C32793100960DF2 /* PlayMusicHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC67B73C1C32793100960DF2 /* PlayMusicHelper.m */; };
 		CCCDB82D1C2A717C00A28D71 /* SingleAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCDB82C1C2A717C00A28D71 /* SingleAccountVC.m */; };
 		CCCDB8371C2A9B0300A28D71 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCDB8331C2A9B0300A28D71 /* MBProgressHUD+MJ.m */; };
 		CCCDB8381C2A9B0300A28D71 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCCDB8341C2A9B0300A28D71 /* MBProgressHUD.bundle */; };
@@ -60,8 +59,6 @@
 		CC496CF21C28E21300885081 /* AppointmentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentTests.m; sourceTree = "<group>"; };
 		CC496CFC1C28E5A800885081 /* Header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
 		CC496CFE1C28E89B00885081 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		CC67B73B1C32793100960DF2 /* PlayMusicHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMusicHelper.h; sourceTree = "<group>"; };
-		CC67B73C1C32793100960DF2 /* PlayMusicHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMusicHelper.m; sourceTree = "<group>"; };
 		CCCDB82B1C2A717C00A28D71 /* SingleAccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleAccountVC.h; sourceTree = "<group>"; };
 		CCCDB82C1C2A717C00A28D71 /* SingleAccountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleAccountVC.m; sourceTree = "<group>"; };
 		CCCDB8321C2A9B0300A28D71 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
@@ -131,8 +128,6 @@
 				CC48BE2C1C294A09004ACFFC /* Utils.m */,
 				CC48BE341C2A38FF004ACFFC /* NSDate+TimeTools.h */,
 				CC48BE351C2A38FF004ACFFC /* NSDate+TimeTools.m */,
-				CC67B73B1C32793100960DF2 /* PlayMusicHelper.h */,
-				CC67B73C1C32793100960DF2 /* PlayMusicHelper.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -288,12 +283,11 @@
 		CC496CCB1C28E21300885081 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = mopellet;
 				TargetAttributes = {
 					CC496CD21C28E21300885081 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = ER7HF9N8DH;
 					};
 					CC496CEB1C28E21300885081 = {
 						CreatedOnToolsVersion = 6.4;
@@ -403,7 +397,6 @@
 				CC48BE2D1C294A09004ACFFC /* Utils.m in Sources */,
 				CCCDB8391C2A9B0300A28D71 /* MBProgressHUD.m in Sources */,
 				CC496CD91C28E21300885081 /* main.m in Sources */,
-				CC67B73D1C32793100960DF2 /* PlayMusicHelper.m in Sources */,
 				CC48BE361C2A38FF004ACFFC /* NSDate+TimeTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,10 +458,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -509,7 +503,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -536,14 +530,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Unipolar Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Unipolar Technology Co.,Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = Appointment/Header.pch;
 				INFOPLIST_FILE = Appointment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mopellet.Appointmen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b9b81972-b5f7-4aff-b181-d67bdce9b857";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -553,14 +548,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Unipolar Technology Co.,Ltd.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Unipolar Technology Co.,Ltd.";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = Appointment/Header.pch;
 				INFOPLIST_FILE = Appointment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mopellet.Appointmen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b9b81972-b5f7-4aff-b181-d67bdce9b857";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -568,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -578,6 +575,7 @@
 				);
 				INFOPLIST_FILE = AppointmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mopellet.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appointment.app/Appointment";
 			};
@@ -587,12 +585,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AppointmentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mopellet.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appointment.app/Appointment";
 			};

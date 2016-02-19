@@ -28,7 +28,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入参观开始时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-pZ-lIK">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="取票结束时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5J0-pZ-lIK">
                                         <rect key="frame" x="116" y="180" width="278" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="9Du-4s-9rz"/>
@@ -36,7 +36,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入参观结束时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImS-3g-sMo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="取票开始时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ImS-3g-sMo">
                                         <rect key="frame" x="116" y="142" width="278" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="GtE-2G-nK3"/>
@@ -62,7 +62,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-ia-b3C">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始取票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyc-ia-b3C">
                                         <rect key="frame" x="20" y="142" width="88" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="Etd-oL-uOt"/>
@@ -72,7 +72,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qv-j7-X69">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束取票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qv-j7-X69">
                                         <rect key="frame" x="20" y="180" width="88" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="9sF-8M-VnF"/>
@@ -342,13 +342,13 @@
                         <outlet property="timeOpenButton" destination="FD2-iH-zKB" id="9U3-M8-LE6"/>
                         <outlet property="timeOpenField" destination="nWL-Q8-Ye3" id="0gU-eX-gZg"/>
                         <outlet property="visitDateField" destination="Ayg-C4-Y4O" id="UJc-kV-7Ze"/>
-                        <outlet property="visitTimeEndField" destination="ImS-3g-sMo" id="Iwo-Dy-xYS"/>
-                        <outlet property="visitTimeStartField" destination="5J0-pZ-lIK" id="Mg9-Ok-hkA"/>
+                        <outlet property="visitTimeEndField" destination="5J0-pZ-lIK" id="VzP-eg-ZCg"/>
+                        <outlet property="visitTimeStartField" destination="ImS-3g-sMo" id="Z3b-83-Fym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="-50"/>
+            <point key="canvasLocation" x="-180" y="-135"/>
         </scene>
         <!--Single AccountVC-->
         <scene sceneID="FQL-79-HTr">
@@ -386,7 +386,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入参观开始时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boL-cW-2cT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="取票开始时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boL-cW-2cT">
                                 <rect key="frame" x="116" y="186" width="278" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qcc-v2-Xeh"/>
@@ -394,7 +394,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入参观结束时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJr-4k-i0j">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="取票结束时间" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eJr-4k-i0j">
                                 <rect key="frame" x="116" y="224" width="278" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NY2-7h-tFZ"/>
@@ -420,7 +420,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH2-Vh-yLe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始取票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH2-Vh-yLe">
                                 <rect key="frame" x="20" y="186" width="88" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Azj-JH-ljT"/>
@@ -430,7 +430,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htp-aZ-v7k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束取票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htp-aZ-v7k">
                                 <rect key="frame" x="20" y="224" width="88" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="FC4-LK-D5W"/>
@@ -583,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IK4-Do-c3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="-50"/>
+            <point key="canvasLocation" x="247" y="-140"/>
         </scene>
     </scenes>
 </document>
