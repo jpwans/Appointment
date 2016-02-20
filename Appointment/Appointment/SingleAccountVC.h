@@ -11,7 +11,7 @@
 
 @interface SingleAccountVC : UIViewController
 
-
+//账号字典信息
 @property(nonatomic,strong)NSDictionary * dictionary;
 
 - (IBAction)closeAction:(UIBarButtonItem *)sender;

@@ -39,6 +39,61 @@
 }
 
 /**
+ * 获取已经预约次数
+ */
+- (int)getTicketCount:(NSDictionary *)userDict{
+    // 判断有没有存储此账号的次数 key 为email和明天的日期。
+    NSString *tomorrowDay = [NSDate GetTomorrowDay];
+    NSString *key = [NSString stringWithFormat:@"%@_%@",[userDict objectForKey:@"email"],tomorrowDay];
+    int  count = [[[[NSUserDefaults standardUserDefaults] objectForKey:key] copy] intValue];
+    return count;
+}
+
+/**
+ * 设置预约次数
+ */
+- (BOOL)setTicketCount:(int)count :(NSDictionary *)userDict{
+    NSString *tomorrowDay = [NSDate GetTomorrowDay];
+    NSString *key = [NSString stringWithFormat:@"%@_%@",[userDict objectForKey:@"email"],tomorrowDay];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",count] forKey:key];
+    BOOL b = [[NSUserDefaults standardUserDefaults] synchronize];
+    return b;
+}
+
+
+/**
+ *  处理单任务的返回值
+ *
+ *  @param responseObject 返回值
+ *  @param error          错误
+ *  @param userDict       账号信息
+ */
+- (void)dealSingleTask:(id)responseObject :(NSError *)error :(NSDictionary *)userDict :(int)currentCount{
+    if (!error) {
+    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSString *success = @"成功提示";
+    //在string这个字符串中搜索success，判断有没有
+    if ([string rangeOfString:success].location != NSNotFound) {
+        NSLog(@"预约成功!");
+        [MBProgressHUD showSuccess:[NSString stringWithFormat:@"第%d张预约成功!",currentCount]];
+        /**
+         *  预约成功数字加 1
+         */
+        int count = [self getTicketCount:userDict];
+        count = count +1;
+        if ([self setTicketCount:count :userDict]) {
+            
+        }
+    }
+    else{
+        [MBProgressHUD showError:[NSString stringWithFormat:@"第%d张预约失败!",currentCount]];
+        NSLog(@"%@",[NSString stringWithFormat:@"第%d张预约失败!",currentCount]);
+    }
+    }
+ 
+}
+
+/**
  *  单任务
  */
 -(void)singleTaskWith:(NSDictionary *)userDict ticketParameter:(NSDictionary *)ticketParameter CompletionHandler:(void (^)(id responseObject))block {
@@ -47,14 +102,38 @@
     [self loginWith:userDict CompletionHandler:^(id responseObject, NSError *error) {
         if (!error) {
             NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-            NSLog(@"login:%@",string);
             if (string.length) {
-                [self taskWith:ticketParameter CompletionHandler:^(id responseObject, NSError *error) {
+                //1、第一次的预约
+                NSMutableDictionary * ticketDict = [NSMutableDictionary dictionaryWithDictionary:ticketParameter];
+                //1.1、设置第一个的个数
+                NSString * firstKey = [NSString stringWithFormat:@"%@_%d",[userDict objectForKey:@"email"],1];
+                NSString * count = [[NSUserDefaults standardUserDefaults] objectForKey:firstKey];
+                [ticketDict setObject:count.length?count:[self getDefaultCount] forKey:PersonCount];
+              NSLog(@"抢预约1：%@",ticketDict);
+                [self taskWith:ticketDict CompletionHandler:^(id responseObject, NSError *error) {
+                    [self dealSingleTask:responseObject :error :userDict :1];
+
+                    
+                    //2、第二次的预约
+                    NSString * secondKey = [NSString stringWithFormat:@"%@_%d",[userDict objectForKey:@"email"],2];
+                    NSString * count = [[NSUserDefaults standardUserDefaults] objectForKey:secondKey];
+                    [ticketDict setObject:count.length?count:[self getDefaultCount] forKey:PersonCount];
+                    NSLog(@"抢预约2：%@",ticketDict);
+                    [self taskWith:ticketDict CompletionHandler:^(id responseObject, NSError *error) {
+                        [self dealSingleTask:responseObject :error :userDict :2];
+                        if (block) {
+                        block(@"Task Done");
+                    }
+                    }];
+                    
+//                    
+//                    [self callbackOperation:responseObject :error :1];
+                    
                     //                    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
                     //                    NSLog(@"预约:%@",string);
-                    if (block) {
-                        block(responseObject);
-                    }
+//                    if (block) {
+//                        block(responseObject);
+//                    }
                 }];
                 
                 
@@ -68,6 +147,7 @@
  */
 -(void)taskWith:(NSDictionary *)parameters CompletionHandler:(void (^)(id responseObject, NSError *error))block
 {
+  
     [manager POST:URL_TicketTask parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (block) {
             block(responseObject,nil);
@@ -80,6 +160,15 @@
     
 }
 
+
+/**
+ * 获取默认订票
+ */
+-(NSString *)getDefaultCount{
+    
+    NSString * count =  [[NSUserDefaults standardUserDefaults] objectForKey:DefaultKey];
+    return count.length?count:@"10";
+}
 
 
 /**
@@ -157,24 +246,51 @@ static int n = 0;
     [operationQueue setMaxConcurrentOperationCount:1];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"第%d个登陆",i);
+        
+    
+        //3、获取第二个票数
+        
+        
         //NSLog(@"request  %@",[self stringWithData:responseObject]);
         NSString * JSESSIONID = [self getJSESSIONID];
         NSLog(@"JSESSIONID:%@",JSESSIONID);
         if (JSESSIONID.length) {
+//            NSDictionary *parameter = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
+//            self.ticketParameter  = [[NSMutableDictionary alloc] initWithDictionary:parameter];
+//            [self.ticketParameter removeObjectForKey:SecondCountKey];
+//            
+            
+            //1.获取账号信息
+            NSDictionary * userDic = [accountArray objectAtIndex:i];
+            //2、获取第一个票数
             NSDictionary *parameter = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
             self.ticketParameter  = [[NSMutableDictionary alloc] initWithDictionary:parameter];
-            [self.ticketParameter removeObjectForKey:SecondCountKey];
+//            [self.ticketParameter removeObjectForKey:SecondCountKey];
+            
+            
+            //1.1、设置参数
+            NSString * firstKey = [NSString stringWithFormat:@"%@_%d",[userDic objectForKey:@"email"],1];
+            NSString * count = [[NSUserDefaults standardUserDefaults] objectForKey:firstKey];
+            [self.ticketParameter setObject:count.length?count:[self getDefaultCount] forKey:PersonCount];
+            NSLog(@"批量抢抢预约参数1：%@",self.ticketParameter);
+            
+            
             [self taskWith:self.ticketParameter CompletionHandler:^(id responseObject, NSError *error) {
                 NSLog(@"第%d个账号的第1次预约",i);
                 [self callbackOperation:responseObject :error :1];
                 /**
                  * 第二次的票
                  */
-                NSDictionary *parameter = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
-                self.ticketParameter  = [[NSMutableDictionary alloc] initWithDictionary:parameter];
-                [self.ticketParameter setObject:[self.ticketParameter objectForKey:SecondCountKey] forKey:PersonCount];
-                [self.ticketParameter removeObjectForKey:SecondCountKey];
+//                NSDictionary *parameter = [[NSUserDefaults standardUserDefaults] objectForKey:@"parameter"];
+//                self.ticketParameter  = [[NSMutableDictionary alloc] initWithDictionary:parameter];
+//                [self.ticketParameter setObject:[self.ticketParameter objectForKey:SecondCountKey] forKey:PersonCount];
+//                [self.ticketParameter removeObjectForKey:SecondCountKey];
                 
+                NSString * secondKey = [NSString stringWithFormat:@"%@_%d",[userDic objectForKey:@"email"],2];
+                NSString * count = [[NSUserDefaults standardUserDefaults] objectForKey:secondKey];
+                [self.ticketParameter setObject:count.length?count:[self getDefaultCount] forKey:PersonCount];
+                NSLog(@"批量抢抢预约参数2：%@",self.ticketParameter);
+
                 [self taskWith:self.ticketParameter CompletionHandler:^(id responseObject, NSError *error) {
                     NSLog(@"第%d个账号的第2次预约",i);
                     [self callbackOperation:responseObject :error :2];

@@ -15,9 +15,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *visitTimeStart;
 @property (weak, nonatomic) IBOutlet UITextField *visitTimeEnd;
 @property (weak, nonatomic) IBOutlet UITextField *personCount;
+@property (weak, nonatomic) IBOutlet UITextField *secondCount;
+
 @property (weak, nonatomic) IBOutlet UILabel *operationCount;
 @property (weak, nonatomic) IBOutlet UIButton *ticketButton;
 
+- (IBAction)saveAction:(id)sender;
 
 @end
 
@@ -55,7 +58,14 @@
         self.visitTimeEnd.text       = visitTimeEnd;
         self.personCount.text        = expectPersonCount;
     }
+    NSString * firstKey = [NSString stringWithFormat:@"%@_%d",[self.dictionary objectForKey:@"email"],1];
+    NSString * count = [[NSUserDefaults standardUserDefaults] objectForKey:firstKey];
     
+    self.personCount.text        = count;
+    
+    NSString * second = [NSString stringWithFormat:@"%@_%d",[self.dictionary objectForKey:@"email"],2];
+    count = [[NSUserDefaults standardUserDefaults] objectForKey:second];
+    self.secondCount.text        = count;
     
     [self reloadUI];
 }
@@ -104,7 +114,7 @@
  * 开始预约
  */
 - (IBAction)ticketStart:(id)sender {
-    
+    [self saveParameter];
     NSString * visitDate          = self.visitDateField.text;
     NSString * visitTimeStart     = self.visitTimeStart.text;
     NSString * visitTimeEnd       = self.visitTimeEnd.text;
@@ -113,43 +123,22 @@
                                       VisitDate:visitDate,
                                       VisitTimeStart:visitTimeStart,
                                       VisitTimeEnd:visitTimeEnd,
-                                      PersonCount:expectPersonCount
+                                      PersonCount:expectPersonCount//默认为10
                                       };
-    [MBProgressHUD showMessage:@"开始预约..."];
     [[NetworkHelper instance] singleTaskWith:self.dictionary ticketParameter:dictionary CompletionHandler:^(id responseObject) {
-        [MBProgressHUD hideHUD];
-        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"预约:%@",string);
-        NSString *success = @"成功提示";
-        //在string这个字符串中搜索success，判断有没有
-        if ([string rangeOfString:success].location != NSNotFound) {
-            NSLog(@"预约成功!");
-            [MBProgressHUD showSuccess:@"预约成功!"];
-            /**
-             *  预约成功数字加 1
-             */
-            int count = [self getTicketCount];
-            count = count +1;
-            if ([self setTicketCount:count]) {
-                [self reloadUI];
-            }
+        if (responseObject) {
+            [self reloadUI];
+            [[NetworkHelper instance] deleteCookies];
         }
-        else{
-            
-            [MBProgressHUD showError:@"预约失败!"];
-        }
-        [[NetworkHelper instance] deleteCookies];
     }];
 }
 
 /**
  * 取消预约
  */
-- (IBAction)cancelAction:(id)sender {
+- (void)cancelAction:(id)sender {
     [[NetworkHelper instance] cancelWith:nil CompletionHandler:^(id responseObject, NSError *error) {
         if (!error) {
-            
-            
             // 预约次数减1
             int count = [self getTicketCount];
             if (count) {
@@ -169,5 +158,26 @@
     }];
 }
 
+/**
+ * 保存参数
+ */
+- (IBAction)saveAction:(id)sender {
+    if ([self saveParameter]) {
+        [MBProgressHUD showSuccess:@"保存成功"];
+    };
+}
 
+/**
+ * 保存参数到偏好设置
+ */
+-(BOOL)saveParameter{
+    //1、保存参数  以账号为字典的key_1 or key_2。
+    NSInteger firstCount = [self.personCount.text longLongValue];
+    NSInteger secondCount = [self.secondCount.text longLongValue];
+    
+    //2、保存到偏好设置
+    [[NSUserDefaults standardUserDefaults ] setObject:[NSString stringWithFormat:@"%ld",(long)firstCount] forKey:[NSString stringWithFormat:@"%@_%d",self.dictionary[@"email"],1]];
+    [[NSUserDefaults standardUserDefaults ] setObject:[NSString stringWithFormat:@"%ld",(long)secondCount] forKey:[NSString stringWithFormat:@"%@_%d",self.dictionary[@"email"],2]];
+   return  [[NSUserDefaults standardUserDefaults] synchronize];
+}
 @end

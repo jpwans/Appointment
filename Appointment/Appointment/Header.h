@@ -63,11 +63,15 @@
 #define VisitTimeStart @"groupTicket.visitTimeStart"
 #define VisitTimeEnd @"groupTicket.visitTimeEnd"
 #define PersonCount @"groupTicket.expectPersonCount"
-#define SecondCountKey @"groupTicket.secondCount"
+//#define SecondCountKey @"groupTicket.secondCount"
+
+#define DefaultKey @"DefaultCount"
 
 
 #define Noti_SendValue @"SendValue"
 #define Noti_ReloadTable @"ReloadTable"
+
+
 
 
 

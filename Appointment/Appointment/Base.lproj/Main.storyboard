@@ -44,7 +44,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入第一张票的人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIv-wC-fgC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIv-wC-fgC">
                                         <rect key="frame" x="116" y="218" width="278" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="kVJ-Fd-rRy"/>
@@ -82,7 +82,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一张票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-n4-4la">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认票数：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpE-n4-4la">
                                         <rect key="frame" x="20" y="218" width="88" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="QN6-Xx-fdp"/>
@@ -120,7 +120,7 @@
                                             <action selector="multiAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SQc-GL-1zV"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入第二张票的人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mDE-qj-WPj">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入第二张票的人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mDE-qj-WPj">
                                         <rect key="frame" x="116" y="256" width="278" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="a1h-yg-1uN"/>
@@ -128,7 +128,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二张票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEd-4S-wRd">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二张票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEd-4S-wRd">
                                         <rect key="frame" x="20" y="256" width="88" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="88" id="6WU-Uk-u4l"/>
@@ -338,7 +338,6 @@
                         <outlet property="countDownLable" destination="saP-e2-Kbb" id="stf-Ru-ocs"/>
                         <outlet property="passwordField" destination="TIw-a1-89m" id="nyx-8c-cQf"/>
                         <outlet property="personCountField" destination="LIv-wC-fgC" id="fM9-ur-3Je"/>
-                        <outlet property="secondCountField" destination="mDE-qj-WPj" id="2dW-KY-Add"/>
                         <outlet property="timeOpenButton" destination="FD2-iH-zKB" id="9U3-M8-LE6"/>
                         <outlet property="timeOpenField" destination="nWL-Q8-Ye3" id="0gU-eX-gZg"/>
                         <outlet property="visitDateField" destination="Ayg-C4-Y4O" id="UJc-kV-7Ze"/>
@@ -348,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="-135"/>
+            <point key="canvasLocation" x="-92" y="-154"/>
         </scene>
         <!--Single AccountVC-->
         <scene sceneID="FQL-79-HTr">
@@ -373,6 +372,11 @@
                                         <barButtonItem key="leftBarButtonItem" title="关闭" id="ixa-la-1b4">
                                             <connections>
                                                 <action selector="closeAction:" destination="b5e-dw-A8D" id="DGI-vN-6Ar"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" id="GBr-bm-zOU">
+                                            <connections>
+                                                <action selector="saveAction:" destination="b5e-dw-A8D" id="GkU-Dg-jyn"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -402,13 +406,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入预约人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZ3-zq-hiu">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入第一张票的预约人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZ3-zq-hiu">
                                 <rect key="frame" x="116" y="262" width="278" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eK9-jN-vv6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入第二张票的预约人数" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vHu-no-v3U">
+                                <rect key="frame" x="116" y="300" width="278" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M9o-pC-0HW"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Y83-h8-ygd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参观日期：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8km-Yw-li7">
                                 <rect key="frame" x="20" y="148" width="88" height="30"/>
@@ -440,7 +453,7 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约人数：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQE-1I-ENV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一张票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQE-1I-ENV">
                                 <rect key="frame" x="20" y="262" width="88" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S0x-th-Oaw"/>
@@ -487,16 +500,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="by4-NR-hnb">
-                                <rect key="frame" x="20" y="300" width="374" height="30"/>
+                                <rect key="frame" x="20" y="338" width="374" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="6ce-sE-mrN"/>
+                                    <constraint firstAttribute="height" constant="30" id="b8O-yJ-QBc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-TQ-J7c">
+                                <rect key="frame" x="163" y="376" width="88" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.60638390019999999" blue="0.25160003089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4XE-fs-ivc"/>
+                                    <constraint firstAttribute="width" constant="88" id="EF6-kA-VSG"/>
+                                    <constraint firstAttribute="width" constant="88" id="KGS-9O-OoM"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xoe-E1-dkc"/>
+                                </constraints>
+                                <state key="normal" title="取消预约">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EF6-kA-VSG"/>
+                                        <exclude reference="Xoe-E1-dkc"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelAction:" destination="b5e-dw-A8D" eventType="touchUpInside" id="W8w-I0-Pw3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第二张票：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY9-3v-che">
+                                <rect key="frame" x="20" y="300" width="88" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G67-H5-MYi"/>
+                                    <constraint firstAttribute="width" constant="88" id="Hxa-t4-KnS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiX-XA-yr4">
-                                <rect key="frame" x="163" y="338" width="88" height="30"/>
+                                <rect key="frame" x="163" y="376" width="88" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.60638390019999999" blue="0.25160003089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="5J8-aP-XLq"/>
@@ -506,29 +551,16 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="ticketStart:" destination="b5e-dw-A8D" eventType="touchUpInside" id="4aB-35-tvE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIO-TQ-J7c">
-                                <rect key="frame" x="163" y="376" width="88" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.60638390019999999" blue="0.25160003089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="EF6-kA-VSG"/>
-                                    <constraint firstAttribute="height" constant="30" id="Xoe-E1-dkc"/>
-                                </constraints>
-                                <state key="normal" title="取消预约">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelAction:" destination="b5e-dw-A8D" eventType="touchUpInside" id="W8w-I0-Pw3"/>
+                                    <action selector="ticketStart:" destination="b5e-dw-A8D" eventType="touchUpInside" id="T1n-P9-dKs"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="by4-NR-hnb" firstAttribute="top" secondItem="VQE-1I-ENV" secondAttribute="bottom" constant="8" id="0CH-vy-pvY"/>
                             <constraint firstItem="YZ3-zq-hiu" firstAttribute="top" secondItem="eJr-4k-i0j" secondAttribute="bottom" constant="8" id="1qm-LX-eQo"/>
                             <constraint firstAttribute="trailing" secondItem="eJr-4k-i0j" secondAttribute="trailing" constant="20" id="2DU-6f-JjL"/>
+                            <constraint firstItem="AIO-TQ-J7c" firstAttribute="centerX" secondItem="yR2-l0-xMO" secondAttribute="centerX" id="2mT-Rv-mf6"/>
+                            <constraint firstItem="lY9-3v-che" firstAttribute="top" secondItem="VQE-1I-ENV" secondAttribute="bottom" constant="8" id="3HN-dO-2cC"/>
                             <constraint firstItem="ntC-9C-mTJ" firstAttribute="top" secondItem="cgW-WH-uku" secondAttribute="bottom" constant="8" id="5hF-iU-lXP"/>
                             <constraint firstItem="htp-aZ-v7k" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="9fx-Dr-Q0t"/>
                             <constraint firstItem="VQE-1I-ENV" firstAttribute="top" secondItem="htp-aZ-v7k" secondAttribute="bottom" constant="8" id="9kF-UD-LTk"/>
@@ -539,6 +571,7 @@
                             <constraint firstItem="DjV-wc-nPc" firstAttribute="top" secondItem="ntC-9C-mTJ" secondAttribute="bottom" constant="8" id="Jf9-2g-yJM"/>
                             <constraint firstItem="boL-cW-2cT" firstAttribute="top" secondItem="1mF-vu-6JS" secondAttribute="bottom" constant="8" id="LSy-VN-gc1"/>
                             <constraint firstItem="AIO-TQ-J7c" firstAttribute="top" secondItem="yiX-XA-yr4" secondAttribute="bottom" constant="8" id="Lg4-HE-1HE"/>
+                            <constraint firstItem="by4-NR-hnb" firstAttribute="top" secondItem="lY9-3v-che" secondAttribute="bottom" constant="8" id="MlK-MU-bfh"/>
                             <constraint firstItem="by4-NR-hnb" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="QMC-w3-glL"/>
                             <constraint firstItem="eJr-4k-i0j" firstAttribute="leading" secondItem="htp-aZ-v7k" secondAttribute="trailing" constant="8" id="SGN-Yv-J3y"/>
                             <constraint firstItem="1mF-vu-6JS" firstAttribute="leading" secondItem="8km-Yw-li7" secondAttribute="trailing" constant="8" id="Tj3-rC-toy"/>
@@ -551,30 +584,50 @@
                             <constraint firstItem="boL-cW-2cT" firstAttribute="leading" secondItem="zH2-Vh-yLe" secondAttribute="trailing" constant="8" id="YXv-xy-vTL"/>
                             <constraint firstAttribute="trailing" secondItem="JPV-lU-2yA" secondAttribute="trailing" constant="20" id="Yhu-NB-lGr"/>
                             <constraint firstItem="VQE-1I-ENV" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="ZZC-5r-ASb"/>
+                            <constraint firstItem="yiX-XA-yr4" firstAttribute="baseline" secondItem="AIO-TQ-J7c" secondAttribute="baseline" id="Zsh-ty-7Pi"/>
+                            <constraint firstAttribute="trailing" secondItem="vHu-no-v3U" secondAttribute="trailing" constant="20" id="ajL-sn-8eH"/>
+                            <constraint firstItem="by4-NR-hnb" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="amU-Dq-7bC"/>
                             <constraint firstItem="yiX-XA-yr4" firstAttribute="top" secondItem="by4-NR-hnb" secondAttribute="bottom" constant="8" id="bN4-uw-FCj"/>
                             <constraint firstItem="AIO-TQ-J7c" firstAttribute="centerX" secondItem="yR2-l0-xMO" secondAttribute="centerX" id="bcQ-45-AOY"/>
+                            <constraint firstItem="AIO-TQ-J7c" firstAttribute="top" secondItem="by4-NR-hnb" secondAttribute="bottom" constant="8" id="bfw-Rd-4fL"/>
                             <constraint firstItem="ntC-9C-mTJ" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="bgl-LO-x6w"/>
                             <constraint firstItem="eJr-4k-i0j" firstAttribute="top" secondItem="boL-cW-2cT" secondAttribute="bottom" constant="8" id="dCx-Gt-FQt"/>
                             <constraint firstAttribute="trailing" secondItem="by4-NR-hnb" secondAttribute="trailing" constant="20" id="ePU-j8-I64"/>
+                            <constraint firstItem="vHu-no-v3U" firstAttribute="top" secondItem="YZ3-zq-hiu" secondAttribute="bottom" constant="8" id="fs1-2x-bpN"/>
+                            <constraint firstItem="vHu-no-v3U" firstAttribute="leading" secondItem="lY9-3v-che" secondAttribute="trailing" constant="8" id="fzq-6j-md8"/>
                             <constraint firstItem="H2l-h4-I9B" firstAttribute="leading" secondItem="DjV-wc-nPc" secondAttribute="trailing" constant="8" id="gMb-pd-OQg"/>
                             <constraint firstItem="JPV-lU-2yA" firstAttribute="leading" secondItem="ntC-9C-mTJ" secondAttribute="trailing" constant="8" id="gtv-4f-2a9"/>
+                            <constraint firstItem="AIO-TQ-J7c" firstAttribute="top" secondItem="by4-NR-hnb" secondAttribute="bottom" constant="8" id="iTN-oU-IKG"/>
                             <constraint firstItem="zH2-Vh-yLe" firstAttribute="top" secondItem="8km-Yw-li7" secondAttribute="bottom" constant="8" id="m3G-CT-vTW"/>
                             <constraint firstItem="H2l-h4-I9B" firstAttribute="leading" secondItem="DjV-wc-nPc" secondAttribute="trailing" constant="8" id="mEX-lg-EY0"/>
                             <constraint firstItem="JPV-lU-2yA" firstAttribute="top" secondItem="cgW-WH-uku" secondAttribute="bottom" constant="8" id="nt8-Kh-tLS"/>
                             <constraint firstItem="cgW-WH-uku" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" id="r67-oj-Rye"/>
+                            <constraint firstItem="lY9-3v-che" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="syo-9C-Xwn"/>
                             <constraint firstItem="8km-Yw-li7" firstAttribute="leading" secondItem="yR2-l0-xMO" secondAttribute="leading" constant="20" id="tLx-Uh-WHD"/>
                             <constraint firstAttribute="trailing" secondItem="boL-cW-2cT" secondAttribute="trailing" constant="20" id="toB-1o-q2E"/>
                             <constraint firstItem="H2l-h4-I9B" firstAttribute="top" secondItem="JPV-lU-2yA" secondAttribute="bottom" constant="8" id="u23-YJ-cQe"/>
                             <constraint firstAttribute="trailing" secondItem="YZ3-zq-hiu" secondAttribute="trailing" constant="20" id="x2F-vT-nEU"/>
                             <constraint firstItem="8km-Yw-li7" firstAttribute="top" secondItem="DjV-wc-nPc" secondAttribute="bottom" constant="8" id="yPZ-Sv-UTb"/>
+                            <constraint firstAttribute="trailing" secondItem="by4-NR-hnb" secondAttribute="trailing" constant="20" id="zbY-W4-nzK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QMC-w3-glL"/>
+                                <exclude reference="ePU-j8-I64"/>
+                                <exclude reference="Lg4-HE-1HE"/>
+                                <exclude reference="bcQ-45-AOY"/>
+                                <exclude reference="bfw-Rd-4fL"/>
+                                <exclude reference="bN4-uw-FCj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="emailField" destination="JPV-lU-2yA" id="FCA-UJ-6Yy"/>
-                        <outlet property="operationCount" destination="by4-NR-hnb" id="GM8-av-vmh"/>
+                        <outlet property="operationCount" destination="by4-NR-hnb" id="aGK-jE-Zl7"/>
                         <outlet property="password" destination="H2l-h4-I9B" id="jEQ-hW-i4f"/>
                         <outlet property="personCount" destination="YZ3-zq-hiu" id="FvG-RW-g5B"/>
+                        <outlet property="secondCount" destination="vHu-no-v3U" id="dwK-H5-T0m"/>
                         <outlet property="ticketButton" destination="yiX-XA-yr4" id="zyG-rk-TXX"/>
                         <outlet property="visitDateField" destination="1mF-vu-6JS" id="vNf-Ot-dJ9"/>
                         <outlet property="visitTimeEnd" destination="eJr-4k-i0j" id="270-Zq-CzP"/>
@@ -583,7 +636,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IK4-Do-c3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="-140"/>
+            <point key="canvasLocation" x="400" y="-154"/>
         </scene>
     </scenes>
 </document>

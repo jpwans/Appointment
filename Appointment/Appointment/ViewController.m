@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *visitTimeStartField;
 @property (weak, nonatomic) IBOutlet UITextField *visitTimeEndField;
 @property (weak, nonatomic) IBOutlet UITextField *personCountField;
-@property (weak, nonatomic) IBOutlet UITextField *secondCountField;
+//@property (weak, nonatomic) IBOutlet UITextField *secondCountField;
 @property (weak, nonatomic) IBOutlet UITextField *timeOpenField;
 @property (weak, nonatomic) IBOutlet UIButton *timeOpenButton;
 - (IBAction)timeOpenAction:(UIButton *)sender;
@@ -109,20 +109,22 @@
         self.visitTimeStartField.text = [parameter objectForKey:VisitTimeStart];
         self.visitTimeEndField.text   = [parameter objectForKey:VisitTimeEnd];
         self.personCountField.text    = [parameter objectForKey:PersonCount];
-        self.secondCountField.text = [parameter objectForKey:SecondCountKey];
+//        self.secondCountField.text = [parameter objectForKey:SecondCountKey];
     }
     else{
         NSString * visitDate          = [NSDate GetTomorrowDay];
         NSString * visitTimeStart     = @"07:30";
         NSString * visitTimeEnd       = @"08:00";
-        NSString * expectPersonCount  = @"10";
+//        NSString * expectPersonCount  = @"10";
         NSString * secondCount = @"10";
+       NSString * count =  [[NSUserDefaults standardUserDefaults] objectForKey:DefaultKey];
+        NSString * expectPersonCount  = count.length?count:@"10";
         NSDictionary * dictionary     = @{
                                           VisitDate:visitDate,
                                           VisitTimeStart:visitTimeStart,
                                           VisitTimeEnd:visitTimeEnd,
-                                          PersonCount:expectPersonCount,
-                                          SecondCountKey : secondCount
+                                          PersonCount:expectPersonCount
+//                                          SecondCountKey : secondCount
                                           };
         [[NSUserDefaults standardUserDefaults] setObject:dictionary forKey:@"parameter"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -130,9 +132,11 @@
         self.visitTimeStartField.text = visitTimeStart;
         self.visitTimeEndField.text   = visitTimeEnd;
         self.personCountField.text    = expectPersonCount;
-        self.secondCountField.text = secondCount;
+//        self.secondCountField.text = secondCount;
     }
     
+
+ 
     // 注册相关通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendValue:) name:Noti_SendValue object:nil];
     
@@ -196,14 +200,16 @@
     NSString * visitTimeStart     = self.visitTimeStartField.text;
     NSString * visitTimeEnd       = self.visitTimeEndField.text;
     NSString * expectPersonCount  = self.personCountField.text;
-    NSString * secondCount = self.secondCountField.text;
+//    NSString * secondCount = self.secondCountField.text;
     NSDictionary * dictionary     = @{
                                       VisitDate:visitDate,
                                       VisitTimeStart:visitTimeStart,
                                       VisitTimeEnd:visitTimeEnd,
-                                      PersonCount:expectPersonCount,
-                                      SecondCountKey:secondCount
+                                      PersonCount:expectPersonCount
+//                                      SecondCountKey:secondCount
                                       };
+    
+    [[NSUserDefaults standardUserDefaults] setObject:self.personCountField.text forKey:DefaultKey];
     
     [[NSUserDefaults standardUserDefaults] setObject:dictionary forKey:@"parameter"];
     [[NSUserDefaults standardUserDefaults] synchronize];

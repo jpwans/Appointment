@@ -14,7 +14,6 @@
 		CC496CD91C28E21300885081 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC496CD81C28E21300885081 /* main.m */; };
 		CC496CDC1C28E21300885081 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC496CDB1C28E21300885081 /* AppDelegate.m */; };
 		CC496CDF1C28E21300885081 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC496CDE1C28E21300885081 /* ViewController.m */; };
-		CC496CE21C28E21300885081 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC496CE01C28E21300885081 /* Main.storyboard */; };
 		CC496CE41C28E21300885081 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC496CE31C28E21300885081 /* Images.xcassets */; };
 		CC496CE71C28E21300885081 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC496CE51C28E21300885081 /* LaunchScreen.xib */; };
 		CC496CF31C28E21300885081 /* AppointmentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC496CF21C28E21300885081 /* AppointmentTests.m */; };
@@ -22,6 +21,7 @@
 		CCCDB8371C2A9B0300A28D71 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCDB8331C2A9B0300A28D71 /* MBProgressHUD+MJ.m */; };
 		CCCDB8381C2A9B0300A28D71 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CCCDB8341C2A9B0300A28D71 /* MBProgressHUD.bundle */; };
 		CCCDB8391C2A9B0300A28D71 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCDB8361C2A9B0300A28D71 /* MBProgressHUD.m */; };
+		CCD9AECC1C771BBC00B7C9F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD9AECA1C771BBC00B7C9F5 /* Main.storyboard */; };
 		CCFC3B841C291DB3006E884C /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFC3B831C291DB3006E884C /* NetworkHelper.m */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,6 @@
 		CC496CDB1C28E21300885081 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CC496CDD1C28E21300885081 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CC496CDE1C28E21300885081 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC496CE11C28E21300885081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC496CE31C28E21300885081 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CC496CE61C28E21300885081 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CC496CEC1C28E21300885081 /* AppointmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppointmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +65,8 @@
 		CCCDB8341C2A9B0300A28D71 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		CCCDB8351C2A9B0300A28D71 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CCCDB8361C2A9B0300A28D71 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		CCCDB85A1C2D27CD00A28D71 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		CCCDB85B1C2D27CD00A28D71 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CCD9AECB1C771BBC00B7C9F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCFC3B821C291DB3006E884C /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		CCFC3B831C291DB3006E884C /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
 		E9E7B6E6263994313BC2C297 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +111,7 @@
 		CC48BE311C294FBC004ACFFC /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CC496CE01C28E21300885081 /* Main.storyboard */,
+				CCD9AECA1C771BBC00B7C9F5 /* Main.storyboard */,
 				CC496CE31C28E21300885081 /* Images.xcassets */,
 				CC496CE51C28E21300885081 /* LaunchScreen.xib */,
 			);
@@ -319,10 +318,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC496CE21C28E21300885081 /* Main.storyboard in Resources */,
 				CCCDB8381C2A9B0300A28D71 /* MBProgressHUD.bundle in Resources */,
 				CC496CE71C28E21300885081 /* LaunchScreen.xib in Resources */,
 				CC496CE41C28E21300885081 /* Images.xcassets in Resources */,
+				CCD9AECC1C771BBC00B7C9F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,15 +419,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC496CE01C28E21300885081 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC496CE11C28E21300885081 /* Base */,
-				CCCDB85A1C2D27CD00A28D71 /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC496CE51C28E21300885081 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,6 +426,14 @@
 				CCCDB85B1C2D27CD00A28D71 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		CCD9AECA1C771BBC00B7C9F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCD9AECB1C771BBC00B7C9F5 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
